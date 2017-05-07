@@ -3,7 +3,21 @@
 
 <beans>
     <bean id="triangle" class="com.nbhirud.spring.Triangle">
+        <!-- This is for setter injection
         <property name="type" value="Equilateral"/>
+        -->
+        <!-- The following is for constructor injection -->
+        <!-- uses datatype to identify which constructor to call
+        <constructor-arg type="java.lang.String" value="Equilateral" />
+        <constructor-arg type="int" value="20" />
+        -->
+        
+        <!-- uses index to identify which constructor to call. Note: This looks for the index number of constructor parameters. 
+        That means, if you have both index 0 and 1 specified here, it will look for a constructor that accepts 2 parameters. 
+        There cannot be a single argument specified here with index 1. -->
+        <constructor-arg index="0" value="Equilateral" /> 
+        <constructor-arg index="1" value="20" />
+        
         
         
     </bean>
